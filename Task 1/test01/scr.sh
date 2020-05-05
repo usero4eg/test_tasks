@@ -1,29 +1,29 @@
 #! /bin/bash
 
-echo " Show currently timezone"
+echo "Show currently timezone"
 timedatectl
 
-echo " Set timezone"
+echo "Set timezone"
 timedatectl set-timezone Europe/Moscow
 
-echo " Show currently locales"
+echo "Show currently locales"
 locale -a
 
-echo " Set locale"
+echo "Set locale"
 localectl set-locale LANG=ru_RU.UTF8
 
-echo " Move sshd port"
+echo "Change sshd port"
 echo "Port 2498" >> /etc/ssh/ssh_config.d/test_01.config 
 echo "PermitRootLogin no" >> /etc/ssh/ssh_config.d/test_01.config
 
-echo " Restart sshd service"
+echo "Restart sshd service"
 systemctl restart sshd
 
-echo " Add serviceuser account with grants to start/stop/restart services"
+echo "Add serviceuser account with grants to start/stop/restart services"
 useradd --system --shell /bin/bash serviceuser
 echo "serviceuser ALL=NOPASSWD:/bin/systemctl" >> /etc/sudoers
 
-echo " Install NGINX server"
+echo "Install NGINX server"
 apt-get update && apt-get upgrade -y && apt install -y nginx
 systemctl enable nginx
 
