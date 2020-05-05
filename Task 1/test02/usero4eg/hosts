@@ -7,9 +7,9 @@ ansible_port = 3223
 ansible_ssh_private_key_file = /home/usero4eg/.ssh/id_rsa
 
 # [ph_server_win]
-# 62.118.131.136 ansible_user=Administrator
+# 62.118.131.136 ansible_user=
 # [ph_server_win:vars]
-# ansible_password = mTx67.Qap
+# ansible_password = 
 # ansible_port = 5986
 # ansible_connection = winrm
 # ansible_winrm_server_cert_validation = ignore
