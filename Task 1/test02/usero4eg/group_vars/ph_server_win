@@ -1,3 +1,4 @@
+---
 # [ph_server_win:vars]
 # ansible_password : 
 # ansible_port :                         5986
