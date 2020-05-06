@@ -15,16 +15,14 @@
     with_items:
         - nginx
         - monit  
-      service: name=nginx # Enable nginx server
-      
+      service: name=nginx # Enable nginx server     
   when: ansible_os_family == "Debian"
 
   - block:
     - name: Install nginx CentOS
       yum: name= {{ item }} state=latest
-  with_items:
-      - nginx
-      - monit
-      yum: name=monit state=latest
+    with_items:
+        - nginx
+        - monit
       service: name=nginx # Enable nginx server
   when: ansible_os_family == "RedHat"
